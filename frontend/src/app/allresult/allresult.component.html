@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Physics</th>
+        <th scope="col">chemistry</th>
+        <th scope="col">Maths</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let val of data; let i = index" class="fs-5 text-wrap">
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{ val.physics }}</td>
+        <td>{{ val.chemistry }}</td>
+        <td>{{ val.maths }}</td>
+        <td>{{ val.total }}</td>
+      </tr>
+    </tbody> 
+  </table>
+</div>
