@@ -29,9 +29,10 @@ export class UserService {
       );
   }
   getAllMerit() {
-    console.warn("user serviveeeee")
-   return this.http
-      .get(`https://jeeresult.onrender.com/api/merit/allmerit`)
-      
+    
+    return this.http.get(`https://jeeresult.onrender.com/api/merit/allmerit`);
+  }
+  getMyMarks(roll: any) {
+    return this.http.get(`https://jeeresult.onrender.com/api/merit/mymerit/${roll.roll}`)
   }
 }

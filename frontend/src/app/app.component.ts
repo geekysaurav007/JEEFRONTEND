@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
   Login(data: any) {
-    this.loginflag = true;
+    this.loginflag = false;
     this.userService.loginService(data);
   }
   signUp() {
@@ -40,5 +40,8 @@ export class AppComponent implements OnInit {
   }
   getAllMerit(){
     this.userService.getAllMerit();
+  }
+  SignOut(){
+    localStorage.clear()
   }
 }
