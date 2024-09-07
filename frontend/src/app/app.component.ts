@@ -27,21 +27,17 @@ export class AppComponent implements OnInit {
       this.loginflag = false;
     }
   }
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-  });
+
   Login(data: any) {
     this.loginflag = false;
     this.userService.loginService(data);
   }
-  signUp() {
-    this.router.navigate(['/signUp']);
-  }
+ 
   getAllMerit(){
     this.userService.getAllMerit();
   }
   SignOut(){
     localStorage.clear()
+    this.router.navigate(["/login"])
   }
 }

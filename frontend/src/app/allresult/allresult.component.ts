@@ -35,8 +35,10 @@ export class AllresultComponent implements OnInit {
    })
   }
   getMyResult(data:any){
+    this.myResult=[];
     this.dataForm.reset()
     this.userservice.getMyMarks(data).subscribe((res)=>{
+      console.log(res);
       this.myResult.push(res)
       this.tableFlag2=true
       this.tableflag1=true

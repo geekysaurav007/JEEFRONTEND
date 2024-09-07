@@ -22,15 +22,25 @@
 </div>
 <!-- table done -->
 <!-- search for my result -->
-<div class="conatiner text-center d-flex justify-content-between  d-flex flex-column column-gap-3">
-  <form [formGroup]="dataForm" (ngSubmit)="getMyResult(dataForm.value)">
-    <input type="text" placeholder="enter your roll" formControlName="roll" />
+<div class="conatiner text-center">
+  <form
+    [formGroup]="dataForm"
+    (ngSubmit)="getMyResult(dataForm.value)"
+    class="d-flex justify-content-between d-flex flex-column w-50 align-items-center mt-5 px-5"
+  >
+    <p>Check your Result:</p>
+    <input
+      type="text"
+      placeholder="enter your roll no"
+      formControlName="roll"
+    />
     <button type="submit" class="btn btn-info m-2 p-2">getMy Result</button>
     <button class="btn btn-info m-2 p-2" (click)="Clear()">Clear</button>
   </form>
   <table class="table" *ngIf="tableFlag2">
     <thead>
       <tr>
+        <th scope="col">Name</th>
         <th scope="col">Physics</th>
         <th scope="col">chemistry</th>
         <th scope="col">Maths</th>
@@ -39,7 +49,7 @@
     </thead>
     <tbody *ngFor="let val of myResult; let i = index" class="fs-5 text-wrap">
       <tr>
-        
+        <td>{{ val.merit.id.name }}</td>
         <td>{{ val.merit.physics }}</td>
         <td>{{ val.merit.chemistry }}</td>
         <td>{{ val.merit.maths }}</td>

@@ -35,4 +35,7 @@ export class UserService {
   getMyMarks(roll: any) {
     return this.http.get(`https://jeeresult.onrender.com/api/merit/mymerit/${roll.roll}`)
   }
+  singnUp(data:any){
+    return this.http.post(`https://jeeresult.onrender.com/api/users/signup`,data)
+  }
 }
