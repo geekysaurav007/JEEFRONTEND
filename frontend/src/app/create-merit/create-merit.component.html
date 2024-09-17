@@ -1,0 +1,113 @@
+
+<!-- physics,chemistry,maths,roll_no -->
+<div
+class="container d-flex flex-column justify-content-center align-items-center mt-3 mb-0"
+>
+<div class="col-lg-12 col-sm-12">
+  <div class="mb-3">
+    <h3 class="text-center fw-bolder">Create Merit</h3>
+    <hr class="m-1" />
+  </div>
+</div>
+<!-- name,email,phone,password,repassword -->
+<div
+  class="container d-flex flex-column justify-content-center align-items-center form-box mt-1 mb-3"
+>
+  <hr class="m-1" />
+  <form
+    [formGroup]="meritForm"
+    (ngSubmit)="createMerit(meritForm.value)"
+    class="mt-3 mb-3"
+  >
+    <div
+      class="row d-flex d-flex flex-column column-gap-3 mb-3 justify-content-between align-items-center"
+    >
+      <div class="col-lg-12">
+        <div class="mb-3">
+          <label for="Full-Name" class="form-label">Physics</label>
+          <input
+            type="text"
+            class="form-control"
+            id="physics"
+            placeholder="Enter marks in physics"
+            formControlName="physics"
+          />
+          <span
+            class="text-center"
+            style="color: red"
+            *ngIf="meritForm.get('physics')?.invalid"
+            >enter marks
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="mb-3">
+          <label for="Chemistry" class="form-label">Chemistry</label>
+          <input
+            type="text"
+            class="form-control"
+            id="chemistry"
+            placeholder="Enter marks in chemistry"
+            formControlName="chemistry"
+          />
+        </div>
+        <span
+          class="text-center"
+          style="color: red"
+          *ngIf="meritForm.get('chemistry')?.invalid"
+          >enter marks in chemistry
+        </span>
+      </div>
+      <div class="col-lg-12">
+        <div class="mb-3">
+          <label for="Phone" class="form-label">maths</label>
+          <input
+            type="text"
+            class="form-control"
+            id="maths"
+            placeholder="Enter marks in maths"
+            formControlName="maths"
+          />
+        </div>
+        <span
+          class="text-center"
+          style="color: red"
+          *ngIf="meritForm.get('maths')?.invalid"
+          >enter marks in maths
+        </span>
+      </div>
+      <div class="col-lg-12">
+        <div class="mb-3">
+          <label for="Password" class="form-label">Roll_no</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rollno"
+            placeholder="Enter roll no"
+            formControlName="roll_no"
+          />
+        </div>
+        <span
+          class="text-center"
+          style="color: red"
+          *ngIf="meritForm.get('roll_no')?.invalid"
+          >enter Roll_no
+        </span>
+      </div>
+      <div class="col-lg-12 col-sm-12">
+        <div class="mb-3">
+          <button
+            type="submit"
+            class="btn btn-info"
+            [disabled]="meritForm.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr class="m-1" />
+</div>
+</div>
+

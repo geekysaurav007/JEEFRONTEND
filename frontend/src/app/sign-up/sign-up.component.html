@@ -94,20 +94,20 @@
         </div>
         <div class="col-lg-12">
           <div class="mb-3">
-            <label for="Re-Password" class="form-label">Re-Password</label>
+            <label for="category" class="form-label">Category</label>
             <input
-              type="password"
+              type="text"
               class="form-control"
-              id="Re-Password"
-              placeholder="repassword"
-              formControlName="repassword"
+              id="Category"
+              placeholder="enter your category-gen/obc/sc/st"
+              formControlName="category"
             />
           </div>
           <span
             class="text-center"
             style="color: red"
-            *ngIf="signUpForm.get('repassword')?.invalid"
-            >enter repassword
+            *ngIf="signUpForm.get('category')?.invalid"
+            >enter category
           </span>
         </div>
         <div class="col-lg-12 col-sm-12">

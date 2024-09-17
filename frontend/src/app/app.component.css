@@ -1,0 +1,17 @@
+#link-button{
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}

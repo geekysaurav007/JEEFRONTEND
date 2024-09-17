@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
-import {UserService} from "../services/user.service"
+import { UserService } from '../services/user.service';
 import {
   FormControl,
   FormGroup,
@@ -16,22 +16,30 @@ import { Router } from '@angular/router';
   imports: [FormsModule, ReactiveFormsModule, CommonModule],
   providers: [NgIf],
   templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css'
+  styleUrl: './sign-up.component.css',
 })
 export class SignUpComponent {
-  constructor(private Router:Router,private userservice:UserService){}
+  constructor(private Router: Router, private userservice: UserService) {}
   signUpForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
     phone: new FormControl('', [Validators.required]),
     password: new FormControl('', Validators.required),
-    repassword: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
   });
   signUp(data: any) {
-    data.phone = Number(data.phone);
+    console.warn(data);
     this.userservice.singnUp(data).subscribe(
       (res: any) => {
-        console.log(res);
+        console.warn(res);
+        if (res.flag) { 
+          alert(`sign_up successfull`)
+          this.signUpForm.reset()
+          this.Router.navigate(['/login']);
+        }
+      },
+      (err) => {
+        alert(err.error.message);
       }
     );
   }
